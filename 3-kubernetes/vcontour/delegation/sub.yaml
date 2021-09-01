@@ -2,7 +2,7 @@ apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
   name: demo3
-  namespace: bni-v1
+  namespace: 
 spec:
   routes:
     # - conditions:

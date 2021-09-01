@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo
+    kind: docker
+  name: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+      kind: docker
+  template:
+    metadata:
+      labels:
+        app: demo
+        kind: docker
+    spec:
+      containers:
+      - image: placeholder:placeholder
+        name: demo
+        
+        ports:
+        - containerPort: 8000

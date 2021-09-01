@@ -10,10 +10,10 @@ resources:
 images:
 - name: placeholder
   newName: harbor.sea.vmwhere.org/sea1/demo
-  newTag: docker
+  newTag: pack
 
 replicas:
-- name: demo
+- name: demo-pack
   count: 1
 
 patches:
