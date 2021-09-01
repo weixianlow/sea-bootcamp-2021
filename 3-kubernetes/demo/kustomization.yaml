@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+- ../_base
+
+images:
+- name: placeholder
+  newName: harbor.sea.vmwhere.org/sea1/demo
+  newTag: db
+
+replicas:
+- name: demo
+  count: 1
+
+patches:
+  - path: ingress-patch.json
+    target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: demo-ingress

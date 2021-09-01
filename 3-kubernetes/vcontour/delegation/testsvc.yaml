@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo2
+  name: demo2
+  namespace: bni-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo2
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo2
+    spec:
+      containers:
+      - image: harbor.letsdocloud.com/bni/demo:v2
+        name: bni-demo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo2
+  name: demo2
+  namespace: bni-v1
+spec:
+  ports:
+  - name: server-port
+    port: 5000
+    targetPort: 5000
+  selector:
+    app: demo2
+  sessionAffinity: None
+  type: ClusterIP

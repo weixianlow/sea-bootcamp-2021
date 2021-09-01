@@ -1,0 +1,8 @@
+[
+  {"op": "replace",
+   "path": "/spec/rules/0/host",
+   "value": "sea01.sea.vmwhere.org"},
+   {"op": "add",
+    "path": "/spec/tls/0/hosts/1",
+    "value": "sea01.sea.vmwhere.org"}
+]

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>SEA Bootcamp 2021</title>
+        <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet" >
+        
+    </head>
+    <body>
+      <BR>
+        <BR>
+        <BR>
+        <BR>
+        <div class="container-lg  position-relative top-50 start-0">
+            <div class="row justify-content-md-center">
+              <div class="col-4">
+                <img src="{{url_for('static', filename='tanzu-logo.jpeg')}}" />
+              </div>
+              <div class="col-md" >
+                Hello <strong> {{ name }}</strong>!
+                <br>
+                <p>
+                Your next Tanzu deal will be worth <span class = "text-danger"><strong>{{ commit }}</strong></span> USD!</p>
+                <BR>
+                <span class="text-success"><em>{{ reaction }}</em></span>
+                <br>
+                <BR>
+                - from: {{ hostname }}
+              </div>
+
+        </div>
+       
+    </body>
+</html>

@@ -1,0 +1,19 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: demo3
+  namespace: bni-v1
+spec:
+  routes:
+    # - conditions:
+    #   - prefix: / # matches /service2
+  - services:
+    - name: demo3
+      port: 5000
+    # conditions:
+    # - prefix: /test
+    # - conditions:
+    #   - prefix: /blog # matches /service2/blog
+    #   services:
+    #     - name: blog
+    #       port: 80

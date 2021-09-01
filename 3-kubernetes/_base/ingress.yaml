@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-ingress
+  annotations:
+    ingress.kubernetes.io/force-ssl-redirect: true
+spec:
+  rules:
+  - host: placeholder.sea.vmwhere.org
+    http:
+      paths:
+      - backend:
+          service:
+            name: demo-svc
+            port:
+              number: 8000
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - '*.sea.vmwhere.org'
+    secretName: sea-vmwhere-cert
