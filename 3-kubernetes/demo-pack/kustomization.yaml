@@ -9,7 +9,7 @@ resources:
 
 images:
 - name: placeholder
-  newName: harbor.sea.vmwhere.org/sea1/demo
+  newName: harbor.sea.vmwhere.org/sea15/sea15
   newTag: pack
 
 replicas:
